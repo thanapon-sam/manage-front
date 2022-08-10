@@ -3,71 +3,180 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
-  <a class="navbar-brand" href="#">LOGO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!-- ============= homePage ============= -->
+<div *ngIf="!isLogin">
+  <!-- navber -->
+  <header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="home/login">เข้าสู่ระบบ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">ลงทะเบียน</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home/login">เข้าสู่ระบบ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ลงทะเบียน</a>
+        </li>
+      </ul>
 
 
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #757377;">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">บรรยกาศร้าน</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">เมนู</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+        </li>
+      </ul>
+
+
+    </div>
+  </nav>
+
+  <!-- content -->
+  <div role="main">
+    <router-outlet></router-outlet>
   </div>
-</header>
 
-<nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #757377;">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">บรรยกาศร้าน</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">เมนู</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login">เกี่ยวกับเรา</a>
-      </li>
-    </ul>
+  <!-- footer -->
+  <footer style="background: #e8e4e4;">
+    <div class="font-monospace text-center my-auto copyright"
+      style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+      <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+      </span>
+    </div>
+  </footer>
+</div>
 
 
-  </div>
-</nav>
+<!-- ============= Menu-actor ============= -->
+<div>
+  <ng-template ngxPermissionsOnly="ADMIN">
+    <!-- navber -->
+    <header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
+      <a class="navbar-brand" href="admin/home">LOGO-ADMIN</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<!-- <div role="main">
-  <router-outlet></router-outlet>
-</div> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;">{{userCust}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #757377;">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">บรรยกาศร้าน</a>
+          </li>
 
-<!--Mascara de imagen-->
-<section class="wrapper fixed-top">
-  <!-- <div class="overlays"></div> -->
-  <div class="container h-100">
-    <div class="row h-100 justify-content-between align-items-center">
-      <div class="col-lg-12">
-        <div class="text-center">
-          <h1 class="mt-5">Welcome To The Deink Of Love</h1>
-          <p>ยินดีต้อนรับเข้าสู่ร้านอาหาร
-            Tne Deink Of Love
-          </p>
-          <button class="btn btn-success btn-outline  mt-5">จองโต๊ะ</button>
-
-
-        </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#">เมนู</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+          </li>
+        </ul>
 
 
       </div>
+    </nav>
+
+    <!-- content -->
+    <div role="main">
+      <router-outlet></router-outlet>
     </div>
-  </div>
-</section>
+
+    <!-- footer -->
+    <footer style="background: #e8e4e4;">
+      <div class="font-monospace text-center my-auto copyright"
+        style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+        <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+        </span>
+      </div>
+    </footer>
+  </ng-template>
+
+  <ng-template ngxPermissionsOnly="CUSTOMER">
+    <!-- navber -->
+    <header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
+      <a class="navbar-brand" href="customer/home">LOGO-CUSTOMER</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;">{{userCust}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #757377;">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">บรรยกาศร้าน</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">เมนู</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </nav>
+
+    <!-- content -->
+    <div role="main">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <footer style="background: #e8e4e4;">
+      <div class="font-monospace text-center my-auto copyright"
+        style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+        <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+        </span>
+      </div>
+    </footer>
+  </ng-template>
+</div>

@@ -7,6 +7,7 @@ import { ListBookingComponent } from './list-booking/list-booking.component';
 import { EditBookingComponent } from './edit-booking/edit-booking.component';
 import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListWorkComponent,
     ListBookingComponent,
     EditBookingComponent,
-    ManageAdminComponent
+    ManageAdminComponent,
+    AdminHomeComponent
   
   ],
   imports: [

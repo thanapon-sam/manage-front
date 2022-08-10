@@ -3,13 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../home/home/home.component';
 import { LoginComponent } from '../home/login/login.component';
 import { RegisterComponent } from '../home/register/register.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EditBookingComponent } from './edit-booking/edit-booking.component';
 import { ListBookingComponent } from './list-booking/list-booking.component';
 import { ListWorkComponent } from './list-work/list-work.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: AdminHomeComponent
+  },
+  {
+    path: 'home', component: AdminHomeComponent
   },
   {
     path: 'works', component: ListWorkComponent
