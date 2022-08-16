@@ -11,9 +11,12 @@ const API_ENOPOINT = environment.API_ENOPOINT;
 export class AdminService {
 
   constructor(private http: HttpClient) { }
+  getBooking(): Observable<any> {
+    return this.http.get(API_ENOPOINT.concat('/booking'));
+  }
 
-  getbooking(): Observable<any> {
-    return this.http.get(API_ENOPOINT.concat('/booking'))
+  deleteBooking(bookId: any): Observable<any>{
+    return this.http.delete(API_ENOPOINT.concat('/booking/'+bookId))
   }
 
 }

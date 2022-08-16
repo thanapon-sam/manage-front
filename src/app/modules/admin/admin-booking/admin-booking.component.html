@@ -1,0 +1,36 @@
+<div class="container">
+    <h3>Show Booking Data</h3><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">รหัสการจอง</th>
+                <th scope="col">เวลาที่จองโต๊ะอาหาร</th>
+                <th scope="col">วันที่จองโต๊ะอาหาร</th>
+                <th scope="col">รหัสอาหาร</th>
+                <th scope="col">รหัสโต๊ะอาหาร</th>
+                <th scope="col">ไอดีลูกค้า</th>
+                <th scope="col">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of booking; let i = index">
+                <th scope="row">{{ i + 1}}</th>
+                <td>{{ item.bookId}}</td>
+                <td>{{ item.bookDate}}</td>
+                <td>{{ item.bookPre}}</td>
+                <td>{{ item.foodId}}</td>
+                <td>{{ item.tableId}}</td>
+                <td>{{ item.custId}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="onEdit(item)">แก้ไข</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger"(click)="onDelete(item)">ลบ</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
