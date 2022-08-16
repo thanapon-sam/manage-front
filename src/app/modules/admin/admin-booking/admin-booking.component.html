@@ -1,36 +1,155 @@
-<div class="container">
-    <h3>Show Booking Data</h3><br>
+<div class="container p-0" style="min-height: 641;">
+    <div class="row row-side">
+        <form>
+            <!--content-->
+            <div class="">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-sm-start pt-2 pb-1 mb-2 border-bottom">
+                    <h3 class="font-monospace fw-bold ">จัดการข้อมูลสินค้า</h3>
+                    <div class="btn-group">
+                        <button type="button" class="btn-sm btn-success">
+                            + เพิ่มสินค้าใหม่ </button>
+                    </div>
+                </div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="home">หน้าแรก</a></li>
+                        <li class="breadcrumb-item active" aria-current="#">สินค้าของฉัน</li>
+                    </ol>
+                </nav>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">No.</th>
-                <th scope="col">รหัสการจอง</th>
-                <th scope="col">เวลาที่จองโต๊ะอาหาร</th>
-                <th scope="col">วันที่จองโต๊ะอาหาร</th>
-                <th scope="col">รหัสอาหาร</th>
-                <th scope="col">รหัสโต๊ะอาหาร</th>
-                <th scope="col">ไอดีลูกค้า</th>
-                <th scope="col">actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of booking; let i = index">
-                <th scope="row">{{ i + 1}}</th>
-                <td>{{ item.bookId}}</td>
-                <td>{{ item.bookDate}}</td>
-                <td>{{ item.bookPre}}</td>
-                <td>{{ item.foodId}}</td>
-                <td>{{ item.tableId}}</td>
-                <td>{{ item.custId}}</td>
-                <td>
-                    <button type="button" class="btn btn-warning" (click)="onEdit(item)">แก้ไข</button>
-                    &nbsp;
-                    <button type="button" class="btn btn-danger"(click)="onDelete(item)">ลบ</button>
-                </td>
-            </tr>
+                <br>
+                <div class="row align-items-center">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center text-dark "
+                                    style="padding-right: 50px; padding-left: 2px;">
+                                    <h4 class="font-monospace fw-bold">รายการสินค้า</h4>
+                                    <div class="btn-toolbar mb-2 mb-md-0">
+                                        <div class="col-md-12 col">
+                                            <div class="input-group">
+                                                <input class="form-control border-end-2 border " type="search" value=""
+                                                    placeholder="search" id="example-search-input" name="searchText"
+                                                    [(ngModel)]="searchText">
+                                                <span class="input-group-append">
+                                                    <button
+                                                        class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5"
+                                                        type="button">
+                                                        <i class="bi bi-search"></i>
 
-        </tbody>
-    </table>
+                                                    </button>
 
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="tab-content p-0" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                        aria-labelledby="home-tab">
+                                        <div class="card">
+                                            <table class="table table-hover border-primary">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th scope="col" style="width: 3%;">No</th>
+                                                        <th scope="col" style="width: 12%;">รหัสสินค้า</th>
+                                                        <th scope="col" style="width: 15%;">ชื่อสินค้า</th>
+                                                        <!-- <th scope="col" style="width: 12%;">รูปภาพ</th> -->
+                                                        <th scope="col" style="width: 12%;">ราคา</th>
+                                                        <th scope="col" style="width: 12%;">จำนวน</th>
+                                                        <th scope="col" style="width: 10%;">หน่วยนับ</th>
+                                                        <!-- <th scope="col" style="width: 10%;">สถานะ</th> -->
+                                                        <th scope="col" style="width: 15%;">ดำเนินการ</th>
+                                                    </tr>
+
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="text-center" *ngFor="let item of listBooking | filter:searchText | paginate: {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };let i = index">
+                                                        <td scope="row" class="text-center">{{i+1}}</td>
+                                                        <td>{{item.proId}}</td>
+                                                        <td class="text-center">{{item.bookId}}</td>
+                                                        <td class="text-center">{{item.bookPre}}</td>
+                                                        <td class="text-center">{{item.bookDate}}</td>
+                                                        <td class="text-center">{{item.foodId}}</td>
+                                                        <td class="text-center">{{item.tableId}}</td>
+                                                        <!-- <td class="text-center">{{item.proStatus}}</td> -->
+                                                        <td class="text-center">
+                                                            <div class="col-12" style="text-align: center;">
+                                                                <button type="button" class="btn-sm btn-sm btn-warning"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#editproduct">
+                                                                    รอ</button>&nbsp;
+                                                                <button type="button" class="btn-sm btn-danger"
+                                                                    (click)="onDelete(item)">ยกเลิก{{item.bookId}}</button>&nbsp;
+
+                                                            </div>
+
+                                                        </td>
+
+                                                        <!-- </tr> -->
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <!-- <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls> -->
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<!--model แก้ไขสินค้า-->
+<div class="modal fade" id="editproduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">แก้ไขสินค้า</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="BookingForm" (ngSubmit)="onSubmit()">
+                    <div class="row p-2">
+                        <div class="mb-3 row">
+                            <label for="validationCustom04" class="col-sm-auto col-form-label">ราคา</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="recipient-name" formControlName="bookPre">
+                                <button type="submit" class="btn-sm btn-danger"
+                                    >อนุมัติ</button>&nbsp;
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
