@@ -7,23 +7,28 @@ import { CustBookingComponent } from './cust-booking/cust-booking.component';
 import { CustManageComponent } from './cust-manage/cust-manage.component';
 import { CustOrderbillComponent } from './cust-orderbill/cust-orderbill.component';
 import { CustEditComponent } from './cust-edit/cust-edit.component';
-import { CustAaboutusComponent } from './cust-aaboutus/cust-aaboutus.component';
 import { CustAboutusComponent } from './cust-aboutus/cust-aboutus.component';
+import { CustAtmosphereComponent } from './cust-atmosphere/cust-atmosphere.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     CustHomeComponent,
     CustBookingComponent,
     CustManageComponent,
     CustOrderbillComponent,
     CustEditComponent,
-    CustAaboutusComponent,
-    CustAboutusComponent
+    CustAboutusComponent,
+    CustAtmosphereComponent,
+ 
   ],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class CustomerModule { }

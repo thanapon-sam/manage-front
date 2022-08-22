@@ -54,13 +54,15 @@ export class LoginComponent implements OnInit {
   getRole(roleId: any) {
     let role = ''; 
     switch(roleId) {
-      case '1':
+      case '1': 
+      case 1: 
         role = 'ADMIN';
         this.router.navigate(['admin/home']).then(() => {
           window.location.reload()
         });
         break;
       case '2':
+      case 2:
         role = 'CUSTOMER'; 
         this.router.navigate(['customer/home']).then(() => {
           window.location.reload()

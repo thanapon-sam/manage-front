@@ -1,86 +1,241 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<div class="card" style="width: 80%; margin: 5px auto; background: #eaf4f7;">
+    <div class="container col-md-11">
+        <div class="card-body">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+            <form [formGroup]="customerRegisterForm">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom margin: 10px">
+                    <h3 class="font-monospace fw-bold">สมัครสมาชิก</h3>
+                    <!-- <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group me-2">
+                        <button type="button" class="btn btn-sm btn-outline-info" routerLink="../manage-user">
+                            << ย้อนกลับ</button>
+                    </div>
+                </div> -->
+                </div>
+
+                <div class="card p-3">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom margin: 10px">
+                        <h5 class="font-monospace fw-bold">ข้อมูลทั่วไป</h5>
+                    </div>
+
+                    <div class="mb-3 row">
+
+                        <div class="col-md-auto">
+                            <label for="recipient-name" class="col-form-label font-monospace ">คำนำหน้า
+                                :</label>
+                        </div>
+                        <div class="col-md-auto">
+                            <select class="form-select" id="validationTitle1" formControlName="custTitleType">
+                                <option selected disabled value="">คำนำหน้า...</option>
+                                <option>นาย</option>
+                                <option>นาง</option>
+                                <option>นางสาว</option>
+                            </select>
+                        </div>
+                        <div class="col-md-auto">
+                            <label for="recipient-name" class="col-form-label font-monospace ">ชื่อ
+                                :</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="recipient-name" formControlName="custFirstName">
+                        </div>
+
+                        <div class="col-md-auto">
+                            <label for="recipient-name" class="col-form-label font-monospace ">นามสกุล
+                                :</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control " id="recipient-name" formControlName="custLastName">
+                        </div>
+                    </div>
+
+                    <div class="mb-1 row">
+                        <div class="mb-3 col">
+                            <label for="inputGraden33" class="col-sm-2 col-form-label">เพศ :</label>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="custGender" id="inlineRadio1" value="ชาย"
+                                    formControlName="custGender">
+                                <label class="form-check-label" for="inlineRadio1">ชาย</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="custGender" id="inlineRadio2"
+                                    value="หญิง" formControlName="custGender">
+                                <label class="form-check-label" for="inlineRadio2">หญิง</label>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <label for="recipient-name" class="col-form-label font-monospace ">วัน/เดือน/ปี เกิด
+                                    :</label>&nbsp;&nbsp;&nbsp;
+                                <input type="date" class="form-control" id="autoSizingInputGroup"
+                                    placeholder="วัน/เดือน/ปี เกิด" formControlName="custBirthDate">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+
+                        <div class="col-md-auto">
+                            <label for="recipient-name" class="col-form-label font-monospace ">อีเมล
+                                :</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="recipient-name" formControlName="custEmail">
+                        </div>
+
+                        <div class="col-md-auto">
+                            <label for="recipient-name" class="col-form-label font-monospace ">เบอร์โทรศัพท์
+                                :</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control " id="recipient-name" formControlName="custTelephone">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <div class="col-md-auto">
+                            <label for="recipient-name" class="col-form-label font-monospace ">ที่อยู่ : </label>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="col-md-12">
+                                <textarea class="form-control" id="message-text" value="xxxxxxxxxxxx"
+                                    formControlName="custAddrass"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-2">
+                            <input type="text" class="form-control" id="recipient-name"
+                                (change)="changeUserZipCode($event)" formControlName="zipCode">
+                        </div> -->
+                    <!-- <div class="col-sm-auto">
+                            <label for="validationCustom04" class="col-form-label">ตำบล :</label>
+                        </div> -->
+                    <!-- <div class="col-sm-2">
+                            <select id="inputState" class="form-select" formControlName="distId">
+                                <option value="" selected disabled>--ตำบล--</option>
+                                <option *ngFor="let disT of districts" [ngValue]="disT.distId">{{
+                                    disT.distNameTh }}</option>
+                            </select>
+                        </div> -->
+                    <!-- <div class="col-sm-auto">
+                            <label for="validationCustom04" class="col-form-label">อำเภอ :</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="inputState" class="form-select" formControlName="amphur">
+                                <option value="" selected disabled>--อำเภอ--</option>
+                                <option *ngFor="let amn of amphurs" [ngValue]="amn.ampNameTh">{{ amn.ampNameTh }}
+                                </option>
+                            </select>
+                        </div> -->
+                    <!-- <div class="col-sm-auto">
+                            <label for="validationCustom04" class="col-form-label">จังหวัด :</label>
+                        </div> -->
+                    <!-- <div class="col-sm-2">
+                            <select id="inputState" class="form-select" formControlName="province">
+                                <option value="" selected disabled>--จังหวัด--</option>
+                                <option *ngFor="let pro of provinces" [ngValue]="pro.pvNameTh">{{ pro.pvNameTh }}
+                                </option>
+                            </select>
+                        </div> -->
+                </div>
+
+                <br>
 
 
-<div class="container">
-<br>  
+                <br>
+                <div class="col-12" style="text-align: center;">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#register1"
+                        data-bs-whatever="@mdo">ถัดไป</button>&nbsp;
+                    <button type="reset" class="btn btn-danger">ล้างข้อมูล</button>
+                </div>
+                <!-- Model username/password -->
+                <div class="modal fade" id="register1" data-bs-backdrop="static" tabindex="-1"
+                    aria-labelledby="register1ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered text-dark">
+                        <div class="modal-content">
+                            <div class="modal-body bg-light">
+                                <div class="row justify-content-end p-2 pt-0">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="card p-3">
+
+                                    <div class="row justify-content-center">
+                                        <h5 class="text-center font-monospace pb-2">บัญชีผู้ใช้</h5>
+                                        <br>
+                                        <div class="mb-3 row">
+                                            <div class="col-md-auto">
+                                                <label for="recipient-name" class="col-form-label font-monospace ">
+                                                    ชื่อบัญชีผู้ใช้&nbsp;</label>
+                                            </div>
+                                            <div class="col">
+                                                <input class="form-control" type="text" placeholder="ชื่อบัญชีผู้ใช้"
+                                                    aria-label="default input example" formControlName="custUsername">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <div class="col-md-auto">
+                                                <label for="recipient-name" class="col-form-label font-monospace ">
+                                                    รหัสผ่าน&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                            </div>
+                                            <div class="col">
+                                                <!-- <show-hide-password [btnOutline]="false"> -->
+                                                <input class="form-control" type="password" placeholder="รหัสผ่าน"
+                                                    aria-label="default input example" formControlName="custPassword">
+                                                <!-- </show-hide-password> -->
+                                            </div>
+                                        </div>
+
+                                   
+
+                                    </div>
+                                    <div class="col-md-12 text-center pt-3">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                                (click)="onSubmit()">ยืนยันการสมัคร</button>&nbsp;
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">ยกเลิก</button>&nbsp;
+                                        </div>
+
+                                        <!-- <button type="submit" class="fw-bolder btn btn-success">ตั้งค่าใหม่</button> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
 
 
 
-<div class="card bg-light">
-<article class="card-body mx-auto" style="max-width: 400px;">
-	<h4 class="card-title mt-3 text-center">Create Account</h4>
-	<p class="text-center">Get started with your free account</p>
-	<p>
-		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-	</p>
-	<p class="divider-text">
-        <span class="bg-light">OR</span>
-    </p>
-	<form>
-	<div class="form-group input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Full name" type="text">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Email address" type="email">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-		</div>
-		<select class="custom-select" style="max-width: 120px;">
-		    <option selected="">+971</option>
-		    <option value="1">+972</option>
-		    <option value="2">+198</option>
-		    <option value="3">+701</option>
-		</select>
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-		</div>
-		<select class="form-control">
-			<option selected=""> Select job type</option>
-			<option>Designer</option>
-			<option>Manager</option>
-			<option>Accaunting</option>
-		</select>
-	</div> <!-- form-group end.// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Create password" type="password">
-    </div> <!-- form-group// -->
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Repeat password" type="password">
-    </div> <!-- form-group// -->                                      
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
-    </div> <!-- form-group// -->      
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
-</form>
-</article>
-</div> <!-- card.// -->
 
-</div> 
-<!--container end.//-->
+<!-- <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">การสมัคร</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                สมัครสมาชิกสำเร็จ
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="refresh()">ตกลง</button>
 
+            </div>
+        </div>
+    </div>
+</div> -->
