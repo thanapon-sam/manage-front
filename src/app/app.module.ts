@@ -5,14 +5,25 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { CommonModule } from '@angular/common';
+
+
+
+
+
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
 
 @NgModule({
   declarations: [
     AppComponent,
+   
+ 
+ 
+ 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

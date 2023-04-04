@@ -1,4 +1,82 @@
-.side-ccc
- {
-    background-color: #add0d8!important;
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fffdfd;
+    background-clip: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 0.5rem;
+}
+.col-form-label {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.6;
+    color: rgb(0, 0, 0);
+}
+
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #5a5a5a;
+    background-color: #ffffff30;
+    border: 1px solid #ffffff;
+    border-radius: 0.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-control[_ngcontent-qtl-c72] {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #97979799;
+    background-color: #ffffff36;
+    background-clip: padding-box;
+    border: 1px solid #0000004a;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: all .2s linear;
+}
+
+.form-select[_ngcontent-ccc-c72] {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #5e5e5e;
+    background-color: #ffffff30;
+    border: 1px solid #adadad;
+    border-radius: 0.25rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.form-check-input[type=radio]:checked:after {
+    border-radius: 50%;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-color: #1266f1;
+    background-color: #1266f1;
+    transition: border-color;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 19%;
+    top: 48%;
 }

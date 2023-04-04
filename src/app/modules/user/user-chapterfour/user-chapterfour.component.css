@@ -1,0 +1,28 @@
+div {
+    font-family: Kanit, serif;
+    font-size: 22px;
+    color: #777777;
+}
+
+ h3 {
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: #964646;
+}
+
+h2 {
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: #964646;
+}
+.row {
+    --mdb-gutter-x: 5rem;
+    --mdb-gutter-y: 21;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--mdb-gutter-y)*-1);
+    margin-right: calc(var(--mdb-gutter-x)*-0.5);
+    margin-left: calc(var(--mdb-gutter-x)*-0.5);
+}
+
+
+
+

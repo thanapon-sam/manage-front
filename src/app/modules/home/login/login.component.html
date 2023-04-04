@@ -1,23 +1,52 @@
-<div id="login">
-    <div class="container">
-        <div id="login-row" class="row justify-content-center align-items-center">
-            <div id="login-column" class="col-md-6">
-                <div id="login-box" class="col-md-12">
-                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" method="post">
-                        <h3 class="text-center text-info">Login</h3>
-                        <div class="form-group">
-                            <label for="username" class="text-info">Username:</label><br>
-                            <input type="text" [ngClass]="{ 'is-invalid': submitted && f['username']?.errors }"
-                                class="form-control" formControlName="username">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="text" [ngClass]="{ 'is-invalid': submitted && f['password']?.errors }"
-                                class="form-control" formControlName="password">
-                        </div>
-                        <button class="btn btn-info btn-md" type="submit">Login</button>
-                    </form>
-                </div>
+
+<div class="p-3" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190619/ourmid/pngtree-children-flying-kite-under-blue-sky-background-material-image_140892.jpg); min-height: 400px; size: 50px;" >
+
+    <div class="card col-md-4" style="border-radius: 30px;">
+        <div class="card-body px-3">
+
+
+            <div class="col-md-12 pt-2 pb-3 text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5J5u6hpP967Ax-7MGI4HRIYKtcal7q0NZ1jpD_RB1T3wi21UhJlfvFhcZhyuT0dr-YVU&usqp=CAU" alt="" width="90" style="padding-left: 10px;">
+                <h3 class="text-center pt-3" style="color: darkcyan;">เข้าสู่ระบบ</h3>
+            </div>
+
+
+            <div class="col-md-12 text-dark">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" method="post">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-sm border-1" formControlName="username"
+                            [ngClass]="{ 'is-invalid': submitted && f['username']?.errors }"
+                            style="background-color: #ffffff;" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">
+                            <i class="bi bi-person-fill" style="font-size: 1rem; color: rgb(23, 167, 135);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                  </svg></i>
+                            ชื่อผู้ใช้งาน</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="password" class="form-control form-control-sm border-1" formControlName="password"
+                            [ngClass]="{ 'is-invalid': submitted && f['password']?.errors }"
+                            style="background-color: #ffffff;" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">
+                            <i class="bi bi-lock-fill" style="font-size: 1rem; color: rgb(23, 167, 135);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-lock2-fill" viewBox="0 0 16 16">
+                                    <path d="M7 6a1 1 0 0 1 2 0v1H7V6z"/>
+                                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 6v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V8.3c0-.627.46-1.058 1-1.224V6a2 2 0 1 1 4 0z"/>
+                                  </svg>
+                            </i>
+                            รหัสผ่าน</label>
+                    </div>
+
+                    <div class="d-grid gap-2 col-6 pt-2 mx-auto">
+                        <button class="btn btn-lg" type="submit" style="border-radius: 2rem;background-color: rgb(0, 128, 128);">
+                            <h6 class="font-monospace text-white">ล็อกอิน</h6>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="col p-0 m-0" style="height: 3px;"></div>
             </div>
         </div>
     </div>

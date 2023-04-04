@@ -24,8 +24,8 @@ export class RegisterService {
   }
   
 
-   saveCustomers(registerData1: any): Observable<any> {
-    return this.http.post<any>(endpoint + '/customers/save', JSON.stringify(registerData1), this.httpOptions)
+   saveUser(registerData1: any): Observable<any> {
+    return this.http.post<any>(endpoint + '/user/save', JSON.stringify(registerData1), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

@@ -1,8 +1,8 @@
-<div class="card" style="width: 80%; margin: 5px auto; background: #eaf4f7;">
+<div class="card"style="background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-global-connection-with-lines-and-dots-blue-thin-lines-abstract-futuristic-image_438825.jpg); min-height: 591px;">
     <div class="container col-md-11">
         <div class="card-body">
 
-            <form [formGroup]="customerRegisterForm">
+            <form [formGroup]="userRegisterForm">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom margin: 10px">
                     <h3 class="font-monospace fw-bold">สมัครสมาชิก</h3>
@@ -27,7 +27,7 @@
                                 :</label>
                         </div>
                         <div class="col-md-auto">
-                            <select class="form-select" id="validationTitle1" formControlName="custTitleType">
+                            <select class="form-select" id="validationTitle1" formControlName="userTitleType">
                                 <option selected disabled value="">คำนำหน้า...</option>
                                 <option>นาย</option>
                                 <option>นาง</option>
@@ -39,7 +39,7 @@
                                 :</label>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="recipient-name" formControlName="custFirstName">
+                            <input type="text" class="form-control" id="recipient-name" formControlName="userFirstName">
                         </div>
 
                         <div class="col-md-auto">
@@ -47,31 +47,31 @@
                                 :</label>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control " id="recipient-name" formControlName="custLastName">
+                            <input type="text" class="form-control " id="recipient-name" formControlName="userLastName">
                         </div>
                     </div>
 
-                    <div class="mb-1 row">
+                    <div class="mb-2 row">
                         <div class="mb-3 col">
                             <label for="inputGraden33" class="col-sm-2 col-form-label">เพศ :</label>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="custGender" id="inlineRadio1" value="ชาย"
-                                    formControlName="custGender">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="ชาย"
+                                    formControlName="gender">
                                 <label class="form-check-label" for="inlineRadio1">ชาย</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="custGender" id="inlineRadio2"
-                                    value="หญิง" formControlName="custGender">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2"
+                                    value="หญิง" formControlName="gender">
                                 <label class="form-check-label" for="inlineRadio2">หญิง</label>
                             </div>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <label for="recipient-name" class="col-form-label font-monospace ">วัน/เดือน/ปี เกิด
                                     :</label>&nbsp;&nbsp;&nbsp;
                                 <input type="date" class="form-control" id="autoSizingInputGroup"
-                                    placeholder="วัน/เดือน/ปี เกิด" formControlName="custBirthDate">
+                                    placeholder="วัน/เดือน/ปี เกิด" formControlName="userBirthDate">
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 :</label>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="recipient-name" formControlName="custEmail">
+                            <input type="text" class="form-control" id="recipient-name" formControlName="userEmail">
                         </div>
 
                         <div class="col-md-auto">
@@ -91,7 +91,8 @@
                                 :</label>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control " id="recipient-name" formControlName="custTelephone">
+                            <input type="text" class="form-control " id="recipient-name"
+                                formControlName="userTelephone">
                         </div>
                     </div>
 
@@ -102,45 +103,52 @@
                         <div class="col-md-11">
                             <div class="col-md-12">
                                 <textarea class="form-control" id="message-text" value="xxxxxxxxxxxx"
-                                    formControlName="custAddrass"></textarea>
+                                    formControlName="userAddrass"></textarea>
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="col-md-2">
-                            <input type="text" class="form-control" id="recipient-name"
-                                (change)="changeUserZipCode($event)" formControlName="zipCode">
-                        </div> -->
-                    <!-- <div class="col-sm-auto">
-                            <label for="validationCustom04" class="col-form-label">ตำบล :</label>
-                        </div> -->
-                    <!-- <div class="col-sm-2">
-                            <select id="inputState" class="form-select" formControlName="distId">
-                                <option value="" selected disabled>--ตำบล--</option>
-                                <option *ngFor="let disT of districts" [ngValue]="disT.distId">{{
-                                    disT.distNameTh }}</option>
+                    <div class="mb-3 row">
+                        <div class="col-sm-auto">
+                            <label for="validationCustom04" class="col-form-label">รหัสไปรษณีย์ :</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="tel" class="form-control" id="autoSizingInputGroup"
+                                (change)="changeUserZipCode($event)" placeholder="กรอกรหัสไปรษณีย์"
+                                formControlName="zipCode">
+                        </div>
+                        <div class="col-sm-auto">
+                            <label for="validationCustom04" class="col-form-label">จังหวัด :</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="inputState" class="form-select" formControlName="province">
+                                <option value="" disabled>--จังหวัด--</option>
+                                <option *ngFor="let pro of provinces" [ngValue]="pro.pvnNameTh">{{ pro.pvnNameTh }}
+                                </option>
                             </select>
-                        </div> -->
-                    <!-- <div class="col-sm-auto">
+                        </div>
+                        <div class="col-sm-auto">
                             <label for="validationCustom04" class="col-form-label">อำเภอ :</label>
                         </div>
                         <div class="col-sm-2">
-                            <select id="inputState" class="form-select" formControlName="amphur">
-                                <option value="" selected disabled>--อำเภอ--</option>
-                                <option *ngFor="let amn of amphurs" [ngValue]="amn.ampNameTh">{{ amn.ampNameTh }}
-                                </option>
+                            <div class="input-group">
+                                <select id="inputState" class="form-select" formControlName="district">
+                                    <option value="" disabled>--อำเภอ--</option>
+                                    <option *ngFor="let dis of districts" [ngValue]="dis.disNameTh">{{ dis.disNameTh }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-auto">
+                            <label for="validationCustom04" class="col-form-label">ตำบล :</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="inputState" class="form-select" formControlName="sdtId">
+                                <option value="" disabled>--ตำบล--</option>
+                                <option *ngFor="let subD of subdistricts" [ngValue]="subD.sdtId">{{
+                                    subD.sdtNameTh }}</option>
                             </select>
-                        </div> -->
-                    <!-- <div class="col-sm-auto">
-                            <label for="validationCustom04" class="col-form-label">จังหวัด :</label>
-                        </div> -->
-                    <!-- <div class="col-sm-2">
-                            <select id="inputState" class="form-select" formControlName="province">
-                                <option value="" selected disabled>--จังหวัด--</option>
-                                <option *ngFor="let pro of provinces" [ngValue]="pro.pvNameTh">{{ pro.pvNameTh }}
-                                </option>
-                            </select>
-                        </div> -->
+                        </div>
+                    </div>
                 </div>
 
                 <br>
@@ -174,7 +182,7 @@
                                             </div>
                                             <div class="col">
                                                 <input class="form-control" type="text" placeholder="ชื่อบัญชีผู้ใช้"
-                                                    aria-label="default input example" formControlName="custUsername">
+                                                    aria-label="default input example" formControlName="userUsername">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -185,12 +193,12 @@
                                             <div class="col">
                                                 <!-- <show-hide-password [btnOutline]="false"> -->
                                                 <input class="form-control" type="password" placeholder="รหัสผ่าน"
-                                                    aria-label="default input example" formControlName="custPassword">
+                                                    aria-label="default input example" formControlName="userPassword">
                                                 <!-- </show-hide-password> -->
                                             </div>
                                         </div>
 
-                                   
+
 
                                     </div>
                                     <div class="col-md-12 text-center pt-3">
@@ -213,7 +221,6 @@
         </div>
     </div>
 </div>
-
 
 
 

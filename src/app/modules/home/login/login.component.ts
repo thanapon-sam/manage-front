@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   submitted = false;
-  
+
   loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required]
@@ -36,26 +36,27 @@ export class LoginComponent implements OnInit {
     }
 
     //call login 
-    this.loginService.loginByUsernamePassword(this.loginForm.value).subscribe((res) => {      
-      sessionStorage.setItem('cust_role', this.getRole(res.roleId));{}
-      sessionStorage.setItem('userName', res.custUsername );
-      sessionStorage.setItem('userCust', res.custFirstName +" "+ res.custLastName);
-      
+    this.loginService.loginByUsernamePassword(this.loginForm.value).subscribe((res) => {
+      sessionStorage.setItem('user_role', this.getRole(res.roleId)); { }
+      sessionStorage.setItem('userId', res.userId);
+      sessionStorage.setItem('userName', res.userUsername);
+      sessionStorage.setItem('userCust', res.userFirstName + " " + res.userLastName);
+
     },
-    (error) => {
-      Swal.fire(
-        'Login Fail!',
-        'Username or Password Incorrect!',
-        'question'
-      )
-    });
+      (error) => {
+        Swal.fire(
+          'Login Fail!',
+          'Username or Password Incorrect!',
+          'question'
+        )
+      });
   }
 
   getRole(roleId: any) {
-    let role = ''; 
-    switch(roleId) {
-      case '1': 
-      case 1: 
+    let role = '';
+    switch (roleId) {
+      case '1':
+      case 1:
         role = 'ADMIN';
         this.router.navigate(['admin/home']).then(() => {
           window.location.reload()
@@ -63,17 +64,17 @@ export class LoginComponent implements OnInit {
         break;
       case '2':
       case 2:
-        role = 'CUSTOMER'; 
-        this.router.navigate(['customer/home']).then(() => {
+        role = 'USER';
+        this.router.navigate(['user/home']).then(() => {
           window.location.reload()
         });
         break;
       default:
         Swal.fire(
           'Login Fail!',
-          'Role is Not Mapping in System!'          
+          'Role is Not Mapping in System!'
         )
-        break;     
+        break;
     }
     alert(role)
     return role;

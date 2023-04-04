@@ -1,53 +1,18 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet" />
 <!------ Include the above in your HEAD tag ---------->
 
 <!-- ============= homePage ============= -->
-<div *ngIf="!isLogin">
-  <!-- navber -->
-  <header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
-    <a class="navbar-brand" href="#">LOGO</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div >
+ 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home/login">เข้าสู่ระบบ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home/register">ลงทะเบียน</a>
-        </li>
-      </ul>
-
-
-    </div>
-  </header>
-  <nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #00000090;">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="customer/atmosphere">บรรยกาศร้าน</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="customer/manage">เมนู</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="customer/manage">เกี่ยวกับเรา</a>
-        </li>
-      </ul>
-
-
-    </div>
-  </nav>
-  
 
   <!-- content -->
   <div role="main">
@@ -55,140 +20,184 @@
   </div>
 
   <!-- footer -->
-  <footer style="background: #e8e4e4;">
-    <div class="font-monospace text-center my-auto copyright"
+  <footer style="background: #ffffff;">
+    <div class="font-monospace text-center my-auto copyright  text-white"
       style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
-      <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
+      <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;"> computer learning media © 2023 All Rights Reserved.
       </span>
     </div>
   </footer>
 </div>
 
+  <!-- ============= Menu-actor ============= -->
+  <div>
+    <ng-template ngxPermissionsOnly="ADMIN">
+      <!-- navber -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <img src="assets/images/logo01.png" height="70">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!-- ============= Menu-actor ============= -->
-<div>
-  <ng-template ngxPermissionsOnly="ADMIN">
-    <!-- navber -->
-    <header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
-      <a class="navbar-brand" href="admin/home">LOGO-ADMIN</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="admin/home">
+              <img src="" />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 topnav-centered ">
+              <li class="nav-item">
+                <a class="nav-link " href="home">หน้าแรก <span class="sr-only">(current)</span></a>
+              </li>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" style="cursor: pointer;">{{userCust}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
-          </li>
-        </ul>
+              <li class="nav-item">
+                <!-- <a class="nav-link" href="admin/customer">จัดการข้อมูลผู้ใช้ระบบ</a> -->
+                <a class="nav-link" href="admin/user">จัดการข้อมูลผู้ใช้ระบบ</a>
+              </li>
+
+
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+             <a class="nav-link" style="padding-right: 10px;font-size: 16px;"><b>{{userCust}}</b></a>
+            <div class="dropdown">
+              <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img
+                  src="https://img.freepik.com/premium-vector/administrator-flat-icon-premium-download_9206-4852.jpg?w=2000"
+                  class="rounded-circle" height="60" alt="Black and White Portrait of a Man" loading="lazy" />
+              </a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <!-- <a class="dropdown-item" href="admin/profile">โปรไฟล์ของฉัน</a> -->
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <a class="dropdown-item" (click)="logOut()" style="cursor: pointer;">ออกจากระบบ</a>
+              </div>
+            </div>
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+
+
+
+      <!-- content -->
+      <div role="main">
+        <router-outlet></router-outlet>
       </div>
-    </header>
-    <nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #fe7700d4;">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin/table">จัดการข้อมูลโต๊ะ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin/manage">จัดการข้อมูลอาหาร</a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="admin/customer">จัดการข้อมูลลูกค้า</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin/booking">ข้อมูลจอง</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin/report">รายงานยอดขาย</a>
-          </li>
-        </ul>
-        
-    
+      <!-- footer -->
+       <!-- footer -->
+       <footer style="background: #ffffff;">
+        <div class="font-monospace text-center my-auto copyright  text-white"
+          style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+          <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;"> computer learning media © 2023 All Rights Reserved.
+          </span>
+        </div>
+      </footer>
+    </ng-template>
 
-      </div>
-    </nav>
 
-    <!-- content -->
-    <div role="main">
-      <router-outlet></router-outlet>
+
+
+
+    <ng-template ngxPermissionsOnly="USER">
+
+
+
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <img src="assets/images/logo01.png" height="70">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
+
     </div>
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
 
-    <!-- footer -->
-    <footer style="background: #e8e4e4;">
-      <div class="font-monospace text-center my-auto copyright"
-        style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
-        <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
-        </span>
-      </div>
-    </footer>
-  </ng-template>
-
-  <ng-template ngxPermissionsOnly="CUSTOMER">
-    <!-- navber -->
-    <header class="navbar navbar-expand-lg" id="up" style="background-color: #7952b3;">
-      <a class="navbar-brand" href="customer/home">LOGO-CUSTOMER</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" style="cursor: pointer;">{{userCust}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <nav class="navbar navbar-expand-lg sticky-top text-center" id="up" style="background-color: #7573773f;">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="home">หน้าแรก <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="customer/atmosphere">บรรยากาศร้าน</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="customer/manage">เมนู</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="customer/aboutus">เกี่ยวกับเรา</a>
-          </li>
-        </ul>
+      <ul class="navbar-nav ms-auto ">
         <li class="nav-item">
-          <a class="nav-link" href="customer/edit">แก้ไขข้อมูลส่วนตัว</a>
+          <a class="nav-link mx-2 text-uppercase " aria-current="page" href="user/home"><i class="fa-solid fa-home me-1"></i>หน้าหลัก</a>
         </li>
-      
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="fa-solid fa-book me-1"></i> เนื้อหา </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="user/chapterone">หน่วยการเรียนรู้ที่ 1</a></li>
+            <li><a class="dropdown-item" href="user/chaptertwo">หน่วยการเรียนรู้ที่ 2</a></li>
+            <li><a class="dropdown-item" href="user/chapterthree">หน่วยการเรียนรู้ที่ 3</a></li>
+            <li><a class="dropdown-item" href="user/chapterfour">หน่วยการเรียนรู้ที่ 4</a></li>
+            <li><a class="dropdown-item" href="user/chapterfive">หน่วยการเรียนรู้ที่ 5</a></li>
 
 
+
+          </ul>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link mx-2 text-uppercase" href="user/quiz"><i class="fa-solid fa-check-square me-1"></i>แบบทดสอบ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" href="user/news"><i class="fa-solid fa-file-text me-1"></i>ข่าวสาร</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" href="user/aboutus"><i class="fa-solid fa-users me-1"></i>เกี่ยวกับเรา</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+        <div class="d-flex align-items-center">
+          <!-- <a class="nav-link" style="padding-right: 10px;font-size: 18px;"><b>{{userId}}</b></a> -->
+        <div class="dropdown">
+
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2784/2784465.png"
+            class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy" />
+        </a>
+          <!-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="user/edit">โปรไฟล์ของฉัน</a>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <a class="dropdown-item" (click)="logOut()" style="cursor: pointer;">ออกจากระบบ</a>
+          </div> -->
+        </div>
       </div>
-    </nav>
-
-    <!-- content -->
-    <div role="main">
-      <router-outlet></router-outlet>
+      </ul>
     </div>
 
-    <!-- footer -->
-    <footer style="background: #e8e4e4;">
-      <div class="font-monospace text-center my-auto copyright"
-        style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
-        <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;">Development © 2021
-        </span>
+  </div>
+</nav>
+
+
+
+
+      <!-- content -->
+      <div role="main">
+        <router-outlet></router-outlet>
       </div>
-    </footer>
-  </ng-template>
-</div>
+
+      <!-- footer -->
+      <footer style="background: #ffffff;">
+        <div class="font-monospace text-center my-auto copyright  text-white"
+          style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
+          <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;"> computer learning media © 2023 All Rights Reserved.
+          </span>
+        </div>
+      </footer>
+
+
+    </ng-template>
+  </div>

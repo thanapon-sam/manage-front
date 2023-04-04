@@ -1,0 +1,183 @@
+{
+    "questions": [{
+            "questionText": "ระบบปฏิบัติการ หรือ โอเอส คือ",
+            "options": [{
+                    "text": "1.ระบบปฏิบัติการที่ใช้กันโดยทั่วไปในปัจจุบัน",
+                    "correct": true
+                },
+                {
+                    "text": "2.เป็นซอฟต์แวร์ที่ทำหน้าที่เป็นตัวกลางระหว่างฮาร์ดแวร์และซอฟต์แวร์ประยุกต์"
+                },
+                {
+                    "text": "3.จัดสรรทรัพยากรในเครื่องคอมพิวเตอร์"
+                },
+                {
+                    "text": "4.ถูกทุกข้อ"
+                }
+            ],
+            "explanation": "1"
+        },
+        {
+            "questionText": "2",
+            "options": [{
+                    "text": "1"
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4",
+                    "correct": true
+                }
+            ],
+            "explanation": "2"
+        },
+        {
+            "questionText": "3",
+            "options": [{
+                    "text": "1"
+                },
+                {
+                    "text": "2",
+                    "correct": true
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "3"
+        },
+        {
+            "questionText": "4",
+            "options": [{
+                    "text": "1"
+                },
+                {
+                    "text": "2",
+                    "correct": true
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "4"
+        },
+        {
+            "questionText": "5",
+            "options": [{
+                    "text": "1",
+                    "correct": true
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "5"
+        },
+        {
+            "questionText": "6",
+            "options": [{
+                    "text": "1"
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4",
+                    "correct": true
+                }
+            ],
+            "explanation": "6"
+        },
+        {
+            "questionText": "7",
+            "options": [{
+                    "text": "1"
+                },
+                {
+                    "text": "2",
+                    "correct": true
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "7"
+        },
+        {
+            "questionText": "8",
+            "options": [{
+                    "text": "1",
+                    "correct": true
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "8"
+        },
+        {
+            "questionText": "9",
+            "options": [{
+                    "text": "1",
+                    "correct": true
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "1"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "9"
+        },
+        {
+            "questionText": "10",
+            "options": [{
+                    "text": "1",
+                    "correct": true
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "3"
+                },
+                {
+                    "text": "4"
+                }
+            ],
+            "explanation": "10"
+        }
+    ]
+}
