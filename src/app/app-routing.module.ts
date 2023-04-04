@@ -1,12 +1,10 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AdminHomeComponent } from './modules/admin/admin-home/admin-home.component';
-import { AdminProfileComponent } from './modules/admin/admin-profile/admin-profile.component';
+
 // import { AdminUserComponent } from './modules/admin/admin-user/admin-user.component';
 
-import { HomeComponent } from './modules/home/home/home.component';
-import { LoginComponent } from './modules/home/login/login.component';
+
 
 import { QuestionComponent } from './modules/user/question/question.component';
 import { QuestionfiveComponent } from './modules/user/questionfive/questionfive.component';
@@ -27,8 +25,8 @@ import { UserQuizComponent } from './modules/user/user-quiz/user-quiz.component'
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'home/login', component: LoginComponent },
+
+
   { path: 'user/home', component: UserHomeComponent },
   { path: 'user/edit', component:  UserEditComponent},
   { path: 'user/aboutus', component: UserAboutusComponent },
@@ -47,20 +45,18 @@ const routes: Routes = [
   { path: 'questionfive', component: QuestionfiveComponent },
 
 
-  { path: 'admin/home', component: AdminHomeComponent },
-  { path: 'admin/profile', component: AdminProfileComponent},
-  // { path: 'admin/user', component: AdminUserComponent},
+
 
 
 
 
   {
-    path: '', redirectTo: 'home', pathMatch: 'full'
-  }, {
-    path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
-  }, {
-    path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
-  },
+    path: '', redirectTo: 'userhome', pathMatch: 'full'
+  }, 
+  // {
+  //   path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+  // }, 
+  
     {
      path: 'user', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
    }

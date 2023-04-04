@@ -10,107 +10,13 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <!-- ============= homePage ============= -->
-<div >
- 
 
 
-  <!-- content -->
   <div role="main">
     <router-outlet></router-outlet>
   </div>
 
-  <!-- footer -->
-  <footer style="background: #ffffff;">
-    <div class="font-monospace text-center my-auto copyright  text-white"
-      style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
-      <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;"> computer learning media © 2023 All Rights Reserved.
-      </span>
-    </div>
-  </footer>
-</div>
-
-  <!-- ============= Menu-actor ============= -->
-  <div>
-    <ng-template ngxPermissionsOnly="ADMIN">
-      <!-- navber -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-          <img src="assets/images/logo01.png" height="70">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" href="admin/home">
-              <img src="" />
-            </a>
-            <!-- Left links -->
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 topnav-centered ">
-              <li class="nav-item">
-                <a class="nav-link " href="home">หน้าแรก <span class="sr-only">(current)</span></a>
-              </li>
-
-              <li class="nav-item">
-                <!-- <a class="nav-link" href="admin/customer">จัดการข้อมูลผู้ใช้ระบบ</a> -->
-                <a class="nav-link" href="admin/user">จัดการข้อมูลผู้ใช้ระบบ</a>
-              </li>
-
-
-            </ul>
-            <!-- Left links -->
-          </div>
-          <!-- Collapsible wrapper -->
-
-          <!-- Right elements -->
-          <div class="d-flex align-items-center">
-             <a class="nav-link" style="padding-right: 10px;font-size: 16px;"><b>{{userCust}}</b></a>
-            <div class="dropdown">
-              <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="dropdownMenuButton"
-                data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img
-                  src="https://img.freepik.com/premium-vector/administrator-flat-icon-premium-download_9206-4852.jpg?w=2000"
-                  class="rounded-circle" height="60" alt="Black and White Portrait of a Man" loading="lazy" />
-              </a>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                <!-- <a class="dropdown-item" href="admin/profile">โปรไฟล์ของฉัน</a> -->
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <a class="dropdown-item" (click)="logOut()" style="cursor: pointer;">ออกจากระบบ</a>
-              </div>
-            </div>
-          </div>
-          <!-- Right elements -->
-        </div>
-        <!-- Container wrapper -->
-      </nav>
-
-
-
-      <!-- content -->
-      <div role="main">
-        <router-outlet></router-outlet>
-      </div>
-
-      <!-- footer -->
-       <!-- footer -->
-       <footer style="background: #ffffff;">
-        <div class="font-monospace text-center my-auto copyright  text-white"
-          style="padding: 0;padding-top: 13px;height: 49.8px;background: #214d90;;width: 100%;">
-          <span class="" style="font-family:  serif; font-size: 14px;padding-top: 4px;"> computer learning media © 2023 All Rights Reserved.
-          </span>
-        </div>
-      </footer>
-    </ng-template>
-
-
-
-
-
-    <ng-template ngxPermissionsOnly="USER">
+   
 
 
 
@@ -162,9 +68,9 @@
 
           <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="dropdownMenuButton"
           data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img
+          <!-- <img
             src="https://cdn-icons-png.flaticon.com/512/2784/2784465.png"
-            class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy" />
+            class="rounded-circle" height="40" alt="Black and White Portrait of a Man" loading="lazy" /> -->
         </a>
           <!-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="user/edit">โปรไฟล์ของฉัน</a>
@@ -199,5 +105,5 @@
       </footer>
 
 
-    </ng-template>
-  </div>
+  
+

@@ -50,7 +50,7 @@ import { QuestionfiveComponent } from './questionfive/questionfive.component';
     UserChapterfiveComponent,
     UserQuizComponent,
     UserNewsComponent,
-    UserEditComponent,
+    // UserEditComponent,
     QuestiontwoComponent,
     QuestionthreeComponent,
     QuestionfourComponent,

@@ -10,16 +10,9 @@ import { NgxPermissionsService } from 'ngx-permissions';
 export class AppComponent implements OnInit {
 
 
-  idleState = 'Not started.';
-  timedOut = false;
-  lastPing?: Date = undefined;
-  // isLogin: Boolean = false;
-  lists: any;
+ 
 
-  public userCust: any;
-  public userStudent: any;
-  //  public userfirstName: any ;
-  public userId: any;
+
 
   constructor(
     private permissionsService: NgxPermissionsService,
@@ -36,25 +29,11 @@ export class AppComponent implements OnInit {
   }
 
   logOut() {
-    sessionStorage.removeItem('user_role');
-    sessionStorage.removeItem('userId');
-    sessionStorage.removeItem('userCust');
-    //  sessionStorage.removeItem('userfirstName');
-    sessionStorage.removeItem('userStudent');
-    this.router.navigate(['home']).then(() => {
-      window.location.reload()
-    });
+
   }
 
   initRolePermission() {
-    const user_role = sessionStorage.getItem('user_role');
-    const role: string = (user_role != null && user_role != undefined) ? user_role : '';
-    // this.isLogin = role ? true : false;
-    this.permissionsService.addPermission(role);
-    this.userCust = sessionStorage.getItem('userCust');
-    this.userStudent = sessionStorage.getItem('userStudent');
-    // this.userfirstName = sessionStorage.getItem('userfirstName');
-    this.userId = sessionStorage.getItem('userId');
+   
   }
 
 }
